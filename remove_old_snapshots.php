@@ -14,8 +14,8 @@
 
 
 // PUT AWS VARIABLES HERE
-define('AWS_ACCESS_KEY', '/home/path/pk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.pem');
-define('AWS_SECRET_ACCESS_CERT', '/home/path/cert-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.pem');
+define('AWS_ACCESS_KEY', 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
+define('AWS_SECRET_KEY', 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
 define('AWS_REGION', 'AWS_REGION_HERE');
 
 // Set debug
@@ -55,7 +55,7 @@ if ($debug)
 
 // Get a list of the snapshots
 $out = array();
-$cmd = 'ec2-describe-snapshots -K ' . AWS_ACCESS_KEY  . ' -C ' . AWS_SECRET_ACCESS_CERT . ' --region ' . AWS_REGION;
+$cmd = 'ec2-describe-snapshots -O ' . AWS_ACCESS_KEY  . ' -W ' . AWS_SECRET_KEY . ' --region ' . AWS_REGION;
 exec($cmd, $out);
 
 // Store each snapshot in it's own array element
